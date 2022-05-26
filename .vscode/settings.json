@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c8df60b6-8772-4d64-934e-8660c4e684b8/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/camattendance",
+    "appService.deploySubpath": "."
+}
