@@ -23,17 +23,17 @@ myColl=db["attendencs"]
 
 
 
-validAdmin=[
-    {
-        "email":"abhishekdiwate879gmail.com",
-        "pass":"abhishek"
-    }
-    ,
-    {
-        "email":"abhijeetthombare333@gmail.com",
-        "pass":"abhi@1234"
-    },
-]
+# validAdmin=[
+#     {
+#         "email":"abhishekdiwate879gmail.com",
+#         "pass":"abhishek"
+#     }
+#     ,
+#     {
+#         "email":"abhijeetthombare333@gmail.com",
+#         "pass":"abhi@1234"
+#     },
+# ]
 
 
 def people(name, images):
@@ -75,19 +75,18 @@ def get_hashed_password(plain_text_password):
     return a
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'application/json'
-CORS(app, support_credentials=True)
+# app.config['CORS_HEADERS'] = 'application/json'
+# CORS(app, support_credentials=True)
 imagebase64 = ''
 
 
 @app.route('/',methods=['GET'])
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def home():
     return "Reached AttendanceCam Server"
 
 
 @app.route('/addPeople',methods=['POST'])
-@cross_origin(supports_credentials=True)
 def addpeople():
     if request.method=='POST':
        recivedData=request.get_json()
@@ -100,7 +99,6 @@ def addpeople():
           return Response("Invalid",status=404)
 
 @app.route('/addUser',methods=['POST'])
-@cross_origin(supports_credentials=True)
 def addUser():
     if request.method=='POST':
         userToBeAdded=request.get_json()
@@ -126,7 +124,6 @@ def addUser():
 
 
 @app.route('/authentication',methods=['POST'])
-@cross_origin(supports_credentials=True)
 def auth():
     if request.method=='POST':
        recivedData=request.get_json()
@@ -140,7 +137,6 @@ def auth():
           return Response("Invalid",status=404)
 
 @app.route('/img', methods=['POST', 'GET'])
-@cross_origin(supports_credentials=True)
 def base64I():
     if request.method == 'POST':
         # prepare_data.prepareData()
@@ -173,24 +169,5 @@ def base64I():
         return "d"
 
 
-# Admin Dashboard Route:
-
-# @app.route("/dashboard",methods=["POST"])
-# @cross_origin(supports_credentials=True)
-# def dashboard():
-#     if request.method=='POST':
-#        recivedData=request.get_json()
-#        if(recivedData):
-#            # print(recivedData)
-#            if (dataBaseUtils.auth(recivedData["userCred"])):
-#                return myColl.find_one({"userName": recivedData["username"]})
-#            else:
-#                return "False"
-#        else:
-#           return Response("Invalid",status=404)
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',
-            debug=True,
-            port=8080)
+    app.run(host='0.0.0.0',port=8080)
