@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'camattendance'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C560C9DD79544932B9C69AC75D8A64FE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC8DC4D46E2241E897862C04878C28FF }}
