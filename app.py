@@ -80,7 +80,10 @@ CORS(app, support_credentials=True)
 imagebase64 = ''
 
 
-
+@app.route('/',methods=['GET'])
+@cross_origin(supports_credentials=True)
+def home():
+    return "Reached AttendanceCam Server"
 
 
 @app.route('/addPeople',methods=['POST'])
