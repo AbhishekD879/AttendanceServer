@@ -17,7 +17,7 @@ tf.config.threading.set_intra_op_parallelism_threads(1)
 def get_encode(face_encoder, face, size):
     face = normalize(face)
     face = cv2.resize(face, size)
-    encode = face_encoder.predict(np.expand_dims(face, axis=0))[0]
+    encode = face_encoder.predict(np.expand_dims(face, axis=0),batch_size=5)[0]
     return encode
 
 
