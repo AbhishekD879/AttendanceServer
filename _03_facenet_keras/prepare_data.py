@@ -8,22 +8,10 @@ from keras.models import load_model
 import matplotlib.pyplot as plt
 import cv2
 from sklearn.preprocessing import Normalizer
-from keras import backend as K
+import tensorflow as tf
 
-num_cores = 2
-
-num_CPU = 1
-num_GPU = 0
-
-config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,
-                        inter_op_parallelism_threads=num_cores, 
-                        allow_soft_placement=True,
-                        device_count = {'CPU' : num_CPU,
-                                        'GPU' : num_GPU}
-                       )
-
-session = tf.Session(config=config)
-K.set_session(session)
+tf.config.threading.set_intra_op_parallelism_threads(2)
+tf.config.threading.set_inter_op_parallelism_threads(2)
 # from utils import get_face, get_encode, l2_normalizer, normalize
 
 # temp
