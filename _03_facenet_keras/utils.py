@@ -5,8 +5,7 @@ import cv2
 from sklearn.preprocessing import Normalizer
 import tensorflow as tf
 
-tf.config.threading.set_intra_op_parallelism_threads(2)
-tf.config.threading.set_inter_op_parallelism_threads(2)
+tf.config.threading.set_intra_op_parallelism_threads(1)
 
 # get encode
 def get_encode(face_encoder, face, size):
