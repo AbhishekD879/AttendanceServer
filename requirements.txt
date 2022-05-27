@@ -1,5 +1,4 @@
-﻿
-﻿absl-py==1.0.0
+absl-py==1.0.0
 astunparse==1.6.3
 bcrypt==3.2.2
 cached-property==1.5.2
@@ -66,3 +65,4 @@ Werkzeug==2.0.3
 wrapt==1.14.0
 zipp==3.7.0
 opencv-python-headless==4.5.3.56
+
