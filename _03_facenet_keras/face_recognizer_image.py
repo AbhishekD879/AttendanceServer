@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import Normalizer
 import tensorflow as tf
 
-tf.config.threading.set_intra_op_parallelism_threads(2)
-tf.config.threading.set_inter_op_parallelism_threads(2)
+tf.config.threading.set_intra_op_parallelism_threads(1)
+# tf.config.threading.set_inter_op_parallelism_threads(2)
 # temp
 def get_encode(face_encoder, face, size):
     face = normalize(face)
@@ -89,7 +89,7 @@ def face_reconizer_image():
     encoding_dict = load_pickle(encodings_path)
     face_detector = mtcnn.MTCNN()
     face_encoder = load_model(encoder_model)
-
+    
     img = cv2.imread(test_img_path)
     # plt_show(img)
 

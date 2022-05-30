@@ -6,7 +6,7 @@ db=client.AttendenceDb
 mycol=db["attendencs"]
 
 def check_password(plain_text_password, hashed_password):
-    
+    hashed_password=hashed_password.decode("utf-8") 
     # Check hashed password. Using bcrypt, the salt is saved into the hash itself
     return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
