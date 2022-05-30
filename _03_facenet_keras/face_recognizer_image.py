@@ -13,12 +13,15 @@ from sklearn.preprocessing import Normalizer
 import tensorflow as tf
 
 tf.config.threading.set_intra_op_parallelism_threads(1)
+<<<<<<< HEAD
 # tf.config.threading.set_inter_op_parallelism_threads(2)
+=======
+>>>>>>> 975d97858842226b24ab465b66c8daae5ba3d9f9
 # temp
 def get_encode(face_encoder, face, size):
     face = normalize(face)
     face = cv2.resize(face, size)
-    encode = face_encoder.predict(np.expand_dims(face, axis=0))[0]
+    encode = face_encoder.predict(np.expand_dims(face, axis=0),batch_size=2)[0]
     return encode
 
 

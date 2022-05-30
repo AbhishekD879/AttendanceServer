@@ -14,7 +14,11 @@ import os
 import tensorflow as tf
 
 tf.config.threading.set_intra_op_parallelism_threads(1)
+<<<<<<< HEAD
 # tf.config.threading.set_inter_op_parallelism_threads(2)
+=======
+
+>>>>>>> 975d97858842226b24ab465b66c8daae5ba3d9f9
 # path = "C:/AbhishekDiwate-Attendence_Cam/ServerFlask/data/people"
 #
 # file_count = len(os.listdir(path))
